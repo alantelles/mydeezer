@@ -12,18 +12,7 @@ function compareName (a,b) {
     return comp;
 }
 
-function handledRequire (mod, modNotFound=null) {
-    try {
-        var res = require(mod);
-    }
-    catch  {
-        if (modNotFound) {
-            var res = require(modNotFound)
-        }
-        else {
-            var res = null;
-        }
-    }
-    return res;
+function getName (arr,id) {
+    return arr.find((e) => e.id == id).name;
 }
-export {compareName, handledRequire};
+export {compareName, getName};
